@@ -4,6 +4,6 @@
 export default function HelloComponent() {
 
     return (
-      <h1>Hallo meine schöne etwas sonnige Welt</h1>
+      <h1>Hallo bester Kurs wo geht</h1>
     );
 }

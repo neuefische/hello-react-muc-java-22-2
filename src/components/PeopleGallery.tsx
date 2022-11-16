@@ -1,3 +1,5 @@
+import "./PeopleGallery.css"
+
 // <KomponentenName> + "Props"
 import GreetingsComponent from "./GreetingsComponent";
 import React from "react";
@@ -17,8 +19,8 @@ export default function PeopleGallery(props: PeopleGalleryProps) {
 
     return (
         // Wir brauchen auf jeden Fall ein "HTML"-ish Elternelement
-        <>
+        <div className={"PeopleGallery"}>
             {peopleComponents}
-        </>
+        </div>
     )
 }

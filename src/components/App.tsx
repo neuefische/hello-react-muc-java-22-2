@@ -9,7 +9,6 @@ function App() {
 
     // Hier wird "Logik betrieben"
     // Hier gilt reines TypeScript
-    const myCoCoachesName = "Florian";
 
     const myBeautifulCoursePeople= [
         "Bassam Kharashfeh",
@@ -36,7 +35,6 @@ function App() {
         // Aus diesem Objekt BAUT React dann "echtes" HTML
 
         <div className="App">
-
             <HelloComponent/>
             <PeopleGallery nameList={myBeautifulCoursePeople} />
         </div>
