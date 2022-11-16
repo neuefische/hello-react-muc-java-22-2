@@ -1,5 +1,3 @@
-import React from "react";
-
 // WHADUP!
 // Diese Komponente soll BITTE von außen benutzbar sein
 // Das passiert durch "export default"

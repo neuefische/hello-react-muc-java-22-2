@@ -1,4 +1,3 @@
-
 // <KomponentenName> + "Props"
 type GreetingsComponentProps = {
     nameToGreet: string
