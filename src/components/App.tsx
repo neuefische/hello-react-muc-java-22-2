@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import HelloComponent from "./HelloComponent";
 import PeopleGallery from "./PeopleGallery";
+import StateExampleComponent from "./StateExampleComponent";
 
 // Komponente die "App" heißt
 // werden in .tsx Dateien gespeichert
@@ -36,7 +37,8 @@ function App() {
 
         <div className="App">
             <HelloComponent/>
-            <PeopleGallery nameList={myBeautifulCoursePeople} />
+            {/*<PeopleGallery nameList={myBeautifulCoursePeople} />*/}
+            <StateExampleComponent />
         </div>
 
     );
