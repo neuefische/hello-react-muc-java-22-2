@@ -24,6 +24,11 @@ export default function StateExampleComponent() {
         console.log(croissantCounter)
     }
 
+    const reduceCounter = () => {
+        console.log("Reduce Counter")
+        setCroissantCounter(croissantCounter - 1)
+    }
+
     // Runde Klammer MUSS in return Zeile sein, weil sonst
     // "unreachable code after return statement"
     return (
@@ -32,5 +37,6 @@ export default function StateExampleComponent() {
             <br />
             <br />
             <button onClick={eatCroissant}>🥐 essen</button>
+            <button onClick={reduceCounter}>🥐 reduzieren</button>
         </div>);
 }
