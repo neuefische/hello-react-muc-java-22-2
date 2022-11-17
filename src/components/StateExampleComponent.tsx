@@ -1,6 +1,6 @@
 // Namensgebung = Großgeschrieben, genau so wie der Dateiname
 // () = Können Parameter benutzen = In React nennt sich das Props
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 
 export default function StateExampleComponent() {
 
@@ -16,6 +16,7 @@ export default function StateExampleComponent() {
     // d.h. setCroissantCounter
     // Schreibweise des Setters = set<StateName>
     const [croissantCounter, setCroissantCounter] = useState(0);
+    const [searchText, setSearchText] = useState("");
 
     function eatCroissant() {
         console.log("Mmmmm ein leckeres 🥐 mit Honig wird gesnackt")
@@ -29,6 +30,11 @@ export default function StateExampleComponent() {
         setCroissantCounter(croissantCounter - 1)
     }
 
+    const saveSearchText = (event: ChangeEvent<HTMLInputElement>) => {
+        console.log(event.target.value)
+        setSearchText(event.target.value)
+    }
+
     // Runde Klammer MUSS in return Zeile sein, weil sonst
     // "unreachable code after return statement"
     return (
@@ -38,5 +44,8 @@ export default function StateExampleComponent() {
             <br />
             <button onClick={eatCroissant}>🥐 essen</button>
             <button onClick={reduceCounter}>🥐 reduzieren</button>
+            <br/>
+            <p>{searchText}</p>
+            <input onChange={saveSearchText}/>
         </div>);
 }
