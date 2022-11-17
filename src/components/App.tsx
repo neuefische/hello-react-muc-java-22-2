@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import './App.css';
 import HelloComponent from "./HelloComponent";
 import PeopleGallery from "./PeopleGallery";
+import StateExample from "./StateExample";
 
 // Komponente die "App" heißt
 // werden in .tsx Dateien gespeichert
@@ -29,6 +30,17 @@ function App() {
         "Martin Kascak",
     ]
 
+    const [charactersToDisplay, setCharactersToDisplay] = useState(myBeautifulCoursePeople);
+
+
+    function filterCharacters($event: ChangeEvent<HTMLInputElement>) {
+        const filteredCharacters = myBeautifulCoursePeople.filter((person:string) => {
+            return person.toLowerCase().includes($event.target.value.toLowerCase())
+        })
+
+        setCharactersToDisplay(filteredCharacters)
+    }
+
     return (
         // Das ist KEIN HTML
         // Das ist ein "Template" = Schablone
@@ -36,7 +48,9 @@ function App() {
 
         <div className="App">
             <HelloComponent/>
-            <PeopleGallery nameList={myBeautifulCoursePeople} />
+            <input onChange={filterCharacters}/>
+            <PeopleGallery nameList={charactersToDisplay} />
+            <StateExample />
         </div>
 
     );

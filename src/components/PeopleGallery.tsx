@@ -2,7 +2,7 @@ import "./PeopleGallery.css"
 
 // <KomponentenName> + "Props"
 import GreetingsComponent from "./GreetingsComponent";
-import React from "react";
+import React, {useState} from "react";
 
 type PeopleGalleryProps = {
     nameList: string []
@@ -10,10 +10,20 @@ type PeopleGalleryProps = {
 
 export default function PeopleGallery(props: PeopleGalleryProps) {
 
+    const [filteredNameList, setFilteredNameList ] = useState(props.nameList)
+
+    function handleAbsenceCheck(nameToGreet: string) {
+        console.log("PeopleGallery bestätigt " + nameToGreet + " ist da")
+        const updatedList = filteredNameList.filter((name) => name !== nameToGreet)
+
+        setFilteredNameList(updatedList)
+    }
+
+
     // Wir erstellen eine Liste von Komponenten mit den Namen
-    const peopleComponents = props.nameList.map(
+    const peopleComponents = filteredNameList.map(
         (personsName, index) => {
-            return <GreetingsComponent nameToGreet={personsName} key={index}/>
+            return <GreetingsComponent nameToGreet={personsName} handleAbsenceCheck={handleAbsenceCheck} key={index}/>
         }
     );
 
